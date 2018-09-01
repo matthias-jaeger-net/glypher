@@ -6,12 +6,69 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>glypher - Create artistic graphics with letters and effects</title>
   <link rel="stylesheet" href="assets/css/main.min.css">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: sans-serif;
+    }
+    html, body, canvas {
+      box-sizing: border-box;
+    }
+    canvas {
+      vertical-align: middle;
+    }
+    nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 290px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+    }
+  </style>
 </head>
 <body>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
-
   <script type="text/javascript" src="assets/js/main.js"></script>
+
+  <nav>
+    <h1>glypher <small>Beta 01</small></h1>
+    <p>
+      Is a typography experiment in a HTML5 canvas element.
+    </p>
+
+    <h3>Settings</h3>
+    <lable>Define your glypher</lable>
+    <input id="glypherInput" type="text"  value="A"></input>
+    <br>
+    <br>
+    <lable>Set a spread range</lable><br>
+    <input id="spreadSlider" type="range" min="1" max="300" value="90" step="2"></input>
+    <br>
+    <lable>Select the font family</lable><br>
+    <select>
+      <option value="volvo">Open Sans</option>
+      <option value="saab">Playfair Display</option>
+      <option value="mercedes">Monaco</option>
+    </select>
+    <br>
+
+
+
+
+    <h3>Features</h3>
+    <ul>
+      <li><a href="">Einen glypher erstellen</a></li>
+      <li><a href="">Einen glypher erstellen</a></li>
+      <li><a href="">Einen glypher erstellen</a></li>
+    </ul>
+  </nav>
 </body>
 </html>
