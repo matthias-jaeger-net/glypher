@@ -7,14 +7,14 @@ https://matthias-jaeger-net.github.io/
 
 
 # Done
-[]- types
-[]- clickable glyphers
-[]- user interface
-[]- load all google fonts
+[ ]- types
+[ ]- clickable glyphers
+[ ]- user interface
+[ ]- load all google fonts
 
 
 # To do
-[]- types
-[]- clickable glyphers
-[]- user interface
-[]- load all google fonts
+[ ]- types
+[ ]- clickable glyphers
+[ ]- user interface
+[ ] load all google fonts
