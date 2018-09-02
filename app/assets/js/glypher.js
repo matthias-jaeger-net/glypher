@@ -34,6 +34,15 @@ class Glypher {
        offset.x = (width - bounds.w) / 2;
        offset.y =  -bounds.y + (height-bounds.h)/2;
     }
+
+    push();
+    let x = offset.x + bounds.x;
+    let y = offset.y + bounds.y;
+    if ((mouseX > x && mouseX < x + bounds.w) && (mouseY > y && mouseY < y + bounds.h)) {
+      rect(x, y, bounds.w, bounds.h);
+    }
+    pop();
+
     return offset;
   }
 
@@ -55,15 +64,23 @@ class Glypher {
       for (let i = 0; i < points.length; i++) {
          let x = points[i].x;
          let y = points[i].y;
-         point(x, y);
+         if (this.type == "points") {
+           point(x, y);
+         } else if (this.type == "ellipses") {
+           ellipse(x, y, this.radius, this.radius);
+         } else if (this.type == "squares") {
+           rectMode(CENTER);
+           rect(x, y, this.radius, this.radius);
+         }
       }
     }
+
+    //textFont(font);
+    //textSize(this.fontsize);
+    //text(this.letter, this.offset.x, this.offset.y);
   }
 
   render() {
-    textFont(font);
-    textSize(this.fontsize);
-    text(this.letter, this.offset.x, this.offset.y);
     this.renderType();
   }
 }
