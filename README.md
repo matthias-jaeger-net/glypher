@@ -7,14 +7,15 @@ https://matthias-jaeger-net.github.io/
 
 
 # Done
-[ ]- types
-[ ]- clickable glyphers
-[ ]- user interface
-[ ]- load all google fonts
+-[x] Set up documents and get started
+-[x] Duplicte code from PlayfairRandomSpread project
+-[x] Create a very basic user interface
+-[x] Added the idea of different types
+-[x] Refacture to a glypher class
 
 
 # To do
-[ ]- types
-[ ]- clickable glyphers
-[ ]- user interface
-[ ] load all google fonts
+-[ ] Finish types
+-[ ] Make clickable glyphers
+-[ ] Better user interface
+-[ ] Load all google fonts via the api
