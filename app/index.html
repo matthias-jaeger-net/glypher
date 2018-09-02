@@ -50,36 +50,46 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>
   <script type="text/javascript" src="assets/js/glypher.js"></script>
-  <script type="text/javascript" src="assets/js/glypher-rendering.js"></script>
+  <script type="text/javascript" src="assets/js/glypher-userinterface.js"></script>
 
   <nav>
     <h1>glypher </h1>
     <small>Beta 01. Is a typography experiment in a HTML5 canvas element.</small>
 
-    <h2>Settings to play with</h2>
-
     <label>Define your glypher</label>
-    <input id="glypherInput" type="text"  value="A"></input>
-
-    <label>Set a sample range</label><br>
-    <input id="rangeSample" type="range" min="0.1" max="0.5" value="0.20" step="0.05"></input>
+    <input id="inputGlypher" type="text"  value="A"></input>
 
 
-    <label>Set a spread range</label><br>
-    <input id="spreadSlider" type="range" min="1" max="300" value="10" step="2"></input>
+    <h2>Settings to play with</h2>
+    <label>Select the particle type</label><br>
+    <select id="selectParticle">
+      <option value="point">Points</option>
+      <option value="square">Squares</option>
+      <option value="portrait">Portrait rectangle</option>
+      <option value="landscape">Landscape rectangle</option>
+      <option value="ellipse">Ellipse</option>
+    </select>
+
+    <label>Select the deformer type</label><br>
+    <select id="selectDeformertype">
+      <option value="none">No transfrom</option>
+      <option value="random">Random spread</option>
+      <option value="noise">Noise shift</option>
+      <option value="sine">Sine transform</option>
+    </select>
 
     <label>Set a glypherSize</label><br>
-    <input id="glypherSize" type="range" min="8" max="1900" value="900" step="1"></input>
+    <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1"></input>
 
     <label>Set a glypherRadius</label><br>
-    <input id="glypherRadius" type="range" min="1" max="200" value="2" step="1"></input>
+    <input id="rangeParticlesize" type="range" min="1" max="200" value="2" step="1"></input>
 
-    <label>Select the type</label><br>
-    <select id="glypherType">
-      <option value="points">Points</option>
-      <option value="squares">Squares</option>
-      <option value="ellipses">Ellipses</option>
-    </select>
+    <h2>Advanced settings</h2>
+    <label>Set a spread range</label><br>
+    <input id="rangeSpread" type="range" min="1" max="300" value="10" step="2"></input>
+
+    <label>Set a sample range</label><br>
+    <input id="rangeSamplerate" type="range" min="0.1" max="0.5" value="0.18" step="0.05"></input>
 
     <h2>Save your work?</h2>
 
