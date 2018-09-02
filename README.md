@@ -10,6 +10,7 @@ Create artistic graphics with letters and effects
 
 
 # To do
+- [ ] Consistent naming for the DOM ids/variables
 - [ ] Finish types
 - [ ] Make clickable glyphers
 - [ ] Better user interface
