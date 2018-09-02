@@ -13,6 +13,7 @@ class Glypher {
     this.radius = rangeParticlesize.value();
     this.sample = rangeSamplerate.value();
     this.deformer = selectDeformertype.value();
+    this.renderingtype = selectRenderingtype.value();
 
     // Calculate position and size properties
     this.offset = this.centerPosition();
@@ -59,6 +60,11 @@ class Glypher {
          let x = points[i].x;
          let y = points[i].y;
 
+         if (this.renderingtype == "gradient") {
+           noStroke();
+           fill(map(i, 0, points.length, 0 ,255));
+         }
+
          if (this.deformer == "random") {
            x += random(-this.spread, this.spread);
            y += random(-this.spread, this.spread);
@@ -78,11 +84,13 @@ class Glypher {
            rectMode(CENTER);
            rect(x, y, this.radius, this.radius);
          } else if (this.type == "landscape") {
-           rectMode(CENTER);
-           rect(x, y, this.radius, this.radius/2);
-         }else if (this.type == "portrait") {
-           rectMode(CENTER);
-           rect(x, y, this.radius/2, this.radius);
+           line(x, y, x + this.radius, y);
+         } else if (this.type == "portrait") {
+           beginShape();
+           vertex(x, y);
+           vertex(x + this.radius, y);
+           vertex(x + this.radius, y + this.radius);
+           endShape(CLOSE)
          }
       }
 
@@ -93,6 +101,16 @@ class Glypher {
   }
 
   render() {
+    if (this.renderingtype == "wireframe") {
+      stroke(0);
+      noFill();
+    } else if (this.renderingtype == "outline") {
+      stroke(0);
+      fill(255);
+    } else if (this.renderingtype == "solid") {
+      noStroke();
+      fill(0)
+    }
     this.renderType();
   }
 }
