@@ -59,16 +59,27 @@
     <label>Define your glypher</label>
     <input id="inputGlypher" type="text"  value="A"></input>
 
-
+    <label>Set a font size</label><br>
+    <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1"></input>
+    <label>Select the rendering</label><br>
+    <select id="selectRenderingtype">
+      <option value="wireframe">Wireframe</option>
+      <option value="outline">Outline</option>
+      <option value="solid">Solid</option>
+      <option value="gradient">Gradient</option>
+    </select>
     <h2>Settings to play with</h2>
     <label>Select the particle type</label><br>
     <select id="selectParticle">
-      <option value="point">Points</option>
-      <option value="square">Squares</option>
-      <option value="portrait">Portrait rectangle</option>
-      <option value="landscape">Landscape rectangle</option>
+      <option value="point">Point</option>
+      <option value="square">Square</option>
+      <option value="portrait">Triangle</option>
+      <option value="landscape">Line</option>
       <option value="ellipse">Ellipse</option>
     </select>
+    <label>Set a particle size</label><br>
+    <input id="rangeParticlesize" type="range" min="1" max="200" value="2" step="1"></input>
+
 
     <label>Select the deformer type</label><br>
     <select id="selectDeformertype">
@@ -78,11 +89,7 @@
       <option value="sine">Sine transform</option>
     </select>
 
-    <label>Set a glypherSize</label><br>
-    <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1"></input>
 
-    <label>Set a glypherRadius</label><br>
-    <input id="rangeParticlesize" type="range" min="1" max="200" value="2" step="1"></input>
 
     <h2>Advanced settings</h2>
     <label>Set a spread range</label><br>

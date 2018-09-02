@@ -1,25 +1,29 @@
 function createUserinterface() {
   inputGlypher = select("#inputGlypher");
-  inputGlypher.changed(redraw);
+  inputGlypher.input(redraw);
 
   selectParticle = select("#selectParticle");
-  selectParticle.changed(redraw);
+  selectParticle.input(redraw);
 
   rangeFontsize = select("#rangeFontsize");
-  rangeFontsize.changed(redraw);
+  rangeFontsize.input(redraw);
 
   rangeParticlesize = select("#rangeParticlesize");
-  rangeParticlesize.changed(redraw);
+  rangeParticlesize.input(redraw);
 
   rangeSamplerate = select("#rangeSamplerate");
-  rangeSamplerate.changed(redraw);
+  rangeSamplerate.input(redraw);
 
   selectDeformertype = select("#selectDeformertype");
-  selectDeformertype.changed(redraw);
+  selectDeformertype.input(redraw);
 
   rangeSpread = select("#rangeSpread");
-  rangeSpread.changed(redraw);
+  rangeSpread.input(redraw);
 
   rangeSamplerate = select("#rangeSamplerate");
-  rangeSamplerate.changed(redraw);
+  rangeSamplerate.input(redraw);
+
+  selectRenderingtype = select("#selectRenderingtype");
+  selectRenderingtype.input(redraw);
+
 }
