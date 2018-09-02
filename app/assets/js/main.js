@@ -23,6 +23,7 @@ let glypherRadius;
 let rangeSample;
 
 let g;
+let b;
 
 
 function preload() {
@@ -40,6 +41,8 @@ function setup() {
    rangeSample = select("#rangeSample");
 
    g = new Glypher();
+   b = new Glypher();
+
 }
 
 
