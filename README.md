@@ -1,7 +1,10 @@
 # glypher
 Create artistic graphics with letters and effects
 
+Currently in development:
 https://matthias-jaeger-net.github.io/glypher/app
+
+![glypher app](app/assets/img/screen.png)
 
 # Done
 - [x] Set up documents and get started
