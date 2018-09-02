@@ -7,8 +7,8 @@ https://matthias-jaeger-net.github.io/
 
 
 # Done
--[x] Set up documents and get started
--[x] Duplicte code from PlayfairRandomSpread project
+- [x] Set up documents and get started
+-[ x] Duplicte code from PlayfairRandomSpread project
 -[x] Create a very basic user interface
 -[x] Added the idea of different types
 -[x] Refacture to a glypher class
