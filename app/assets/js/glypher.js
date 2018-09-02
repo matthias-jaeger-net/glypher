@@ -4,13 +4,15 @@ class Glypher {
   }
 
   updateValues() {
+
     // Get data from DOM input fields
-    this.letter = glypherInput.value();
-    this.fontsize = glypherSize.value();
-    this.type = glypherType.value();
-    this.spread = spreadSlider.value();
-    this.radius = glypherRadius.value();
-    this.sample = rangeSample.value();
+    this.letter = inputGlypher.value();
+    this.fontsize = rangeFontsize.value();
+    this.type = selectParticle.value();
+    this.spread = rangeSpread.value();
+    this.radius = rangeParticlesize.value();
+    this.sample = rangeSamplerate.value();
+    this.deformer = selectDeformertype.value();
 
     // Calculate position and size properties
     this.offset = this.centerPosition();
@@ -34,15 +36,6 @@ class Glypher {
        offset.x = (width - bounds.w) / 2;
        offset.y =  -bounds.y + (height-bounds.h)/2;
     }
-
-    push();
-    let x = offset.x + bounds.x;
-    let y = offset.y + bounds.y;
-    if ((mouseX > x && mouseX < x + bounds.w) && (mouseY > y && mouseY < y + bounds.h)) {
-      rect(x, y, bounds.w, bounds.h);
-    }
-    pop();
-
     return offset;
   }
 
@@ -60,20 +53,39 @@ class Glypher {
 
   renderType() {
     let points = this.points;
-    for (let a = 0; a < 10; a++) {
+
+    let noiseValue = 0;
       for (let i = 0; i < points.length; i++) {
          let x = points[i].x;
          let y = points[i].y;
-         if (this.type == "points") {
+
+         if (this.deformer == "random") {
+           x += random(-this.spread, this.spread);
+           y += random(-this.spread, this.spread);
+         } else if (this.deformer == "noise") {
+           x += noise(noiseValue) * this.spread;
+           noiseValue += 0.3;
+         } else if (this.deformer == "sine") {
+           x += sin(i) * this.spread;
+           y += sin(i) * this.spread;
+         }
+
+         if (this.type == "point") {
            point(x, y);
-         } else if (this.type == "ellipses") {
+         } else if (this.type == "ellipse") {
            ellipse(x, y, this.radius, this.radius);
-         } else if (this.type == "squares") {
+         } else if (this.type == "square") {
            rectMode(CENTER);
            rect(x, y, this.radius, this.radius);
+         } else if (this.type == "landscape") {
+           rectMode(CENTER);
+           rect(x, y, this.radius, this.radius/2);
+         }else if (this.type == "portrait") {
+           rectMode(CENTER);
+           rect(x, y, this.radius/2, this.radius);
          }
       }
-    }
+
 
     //textFont(font);
     //textSize(this.fontsize);

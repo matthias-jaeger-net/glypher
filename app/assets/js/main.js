@@ -14,39 +14,29 @@
 */
 
 let font;
-
-let spreadSlider;
-let glypherInput;
-let glypherSize;
-let glypherType;
-let glypherRadius;
-let rangeSample;
-
 let g;
-let b;
 
+let inputGlypher,
+selectParticle,
+rangeFontsize,
+rangeParticlesize,
+rangeSamplerate,
+selectDeformertype,
+rangeSpread,
+rangeSamplerange;
 
 function preload() {
    font = loadFont("assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
+   createUserinterface();
 }
 
 function setup() {
    canvas = createCanvas(window.innerWidth-350, window.innerHeight);
-
-   spreadSlider = select("#spreadSlider");
-   glypherInput = select("#glypherInput");
-   glypherSize = select("#glypherSize");
-   glypherType = select("#glypherType");
-   glypherRadius = select("#glypherRadius");
-   rangeSample = select("#rangeSample");
-
    g = new Glypher();
-   b = new Glypher();
-
 }
 
-
 function draw() {
+  noLoop();
     background(255);
     g.updateValues();
     g.render();
