@@ -31,7 +31,7 @@ function preload() {
 }
 
 function setup() {
-   canvas = createCanvas(window.innerWidth-350, window.innerHeight);
+   canvas = createCanvas(window.innerWidth, window.innerHeight);
    g = new Glypher();
 }
 
