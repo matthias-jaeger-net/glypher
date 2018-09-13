@@ -26,4 +26,10 @@ function createUserinterface() {
   selectRenderingtype = select("#selectRenderingtype");
   selectRenderingtype.input(redraw);
 
+  selectFontfamily = select("#selectFontfamily");
+  selectFontfamily.input(function() {
+    font = loadFont(this.value(), function() {
+      redraw();
+    });
+  });
 }
