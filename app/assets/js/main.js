@@ -22,13 +22,19 @@ function preload() {
   preloader = select("#loading");
   let domElement = select("#selectFontfamily");
 
-  loadJSON("assets/php/loadFonts.php", function (data) {
-    let opts = "";
-    for (let font of data.items) {
-      opts += "<option value=" + font.files.regular +  ">" + font.family + "</option>";
-    }
-    domElement.html(opts);
-  }, function () { console.log("Error loading fonts"); });
+  loadJSON(
+    "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyATc460rTq2EDcUlkNs1fH4SWnSs1zM8vI",
+    "jsonp",
+    function (data) {
+      let opts = "";
+      for (let font of data.items) {
+        opts += "<option value=" + font.files.regular +  ">" + font.family + "</option>";
+      }
+      domElement.html(opts);
+    },
+    function () {
+      console.log("Error loading fonts");
+  });
 
   font = loadFont("assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
 
