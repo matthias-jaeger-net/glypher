@@ -1,78 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>glypher - Create artistic graphics with letters and effects</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>glypher - Create artistic graphics with letters and effects</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
 
-</head>
+      html, body, input, select, option {
+        font-family: sans-serif;
+        font-size: 10pt;
+      }
+      canvas {
+        vertical-align: middle;
+        margin-left: 250px;
+      }
+      /*
+        Settings window
+      */
+      .settings {
+        width: 250px;
+        position: fixed;
+        padding: 20px;
+      }
+      .settings input, .settings select {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+      label {
+        font-size: 8pt;
+        margin-left: 5px;
+      }
+      /*
+        Preloader
+      */
+      .loading {
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 90;
+      }
+    </style>
+  </head>
 <body>
+  <div id="loading" class="loading">
+    <div class="loader">
+      glypher
+    </div>
+  </div>
+  <div class="settings">
+    <h1>glypher</h1>
+    <p>
+      Create complex text effects, based on the vertices of letters.
+    </p>
+    <label>Write something</label>
+    <input id="inputGlypher" type="text" class="form-control" value="A"></input>
+    <label>Font size</label>
+    <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1"></input>
+    <label>Font family</label>
+    <select id="selectFontfamily"></select>
+    <label>Particle size</label>
+    <input id="rangeParticlesize" type="range" min="1" max="200" value="50" step="1"></input>
+    <label>Particle type</label>
+    <select id="selectParticle">
+      <option value="square">Square</option>
+      <option value="portrait">Triangle</option>
+      <option value="ellipse">Ellipse</option>
+    </select>
+    <label>Rendering</label>
+    <select id="selectRenderingtype">
+      <option value="wireframe">Wireframe</option>
+      <option value="outline">Outline</option>
+      <option value="solid">Solid</option>
+      <option value="gradient">Gradient</option>
+    </select>
+    <label>Deformer type</label>
+    <select id="selectDeformertype">
+      <option value="none">No transfrom</option>
+      <option value="random">Random spread</option>
+      <option value="noise">Noise shift</option>
+      <option value="sine">Sine transform</option>
+    </select>
+    <label>Spread</label>
+    <input id="rangeSpread" type="range" min="1" max="300" value="10" step="2"></input>
+    <label>Sample range</label>
+    <input id="rangeSamplerate" type="range" min="0.1" max="0.5" value="0.18" step="0.05"></input>
+  </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
-  <script type="text/javascript" src="assets/js/main.js"></script>
+
   <script type="text/javascript" src="assets/js/glypher.js"></script>
   <script type="text/javascript" src="assets/js/glypher-userinterface.js"></script>
 
-  <nav>
-    <h4>glypher </h4>
-    <small>A typography experiment in the browser</small>
-    <button type="submit" id="saveJpg">Save a jpg image</button>
-  </nav>
-
-
-  <form>
-    <div>
-      <label>Define your glypher</label>
-      <input id="inputGlypher" type="text" class="form-control" value="A"></input>
-    </div>
-    <div>
-      <label>Set a font size</label>
-      <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1"></input>
-      <label>Set a particle size</label>
-      <input id="rangeParticlesize" type="range" min="1" max="200" value="2" step="1"></input>
-
-    </div>
-    <div>
-      <label>Select the rendering</label>
-      <select id="selectRenderingtype" class="form-control select select-primary select-block mbl">
-        <option value="wireframe">Wireframe</option>
-        <option value="outline">Outline</option>
-        <option value="solid">Solid</option>
-        <option value="gradient">Gradient</option>
-      </select>
-    </div>
-    <div>
-      <label>Select the particle type</label>
-      <select id="selectParticle">
-        <option value="point">None</option>
-        <option value="square">Square</option>
-        <option value="portrait">Triangle</option>
-        <option value="landscape">Line</option>
-        <option value="ellipse">Ellipse</option>
-      </select>
-    </div>
-
-    <div>
-      <label>Select the deformer type</label>
-      <select id="selectDeformertype">
-        <option value="none">No transfrom</option>
-        <option value="random">Random spread</option>
-        <option value="noise">Noise shift</option>
-        <option value="sine">Sine transform</option>
-      </select>
-
-    </div>
-
-    <div>
-      <label>Set a spread range</label>
-      <input id="rangeSpread" type="range" min="1" max="300" value="10" step="2"></input>
-      <label>Set a sample range</label>
-      <input id="rangeSamplerate" type="range" min="0.1" max="0.5" value="0.18" step="0.05"></input>
-    </div>
-
-  </form>
+  <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,7 +1,5 @@
 /*
-*  glypher
-*
-*  Is a typography experiment using the delicate path of Claus Eggers Sørensens
+*  glypher is a typography experiments
 *
 *  Author
 *  Matthias Jäger, Graz 2018
@@ -13,9 +11,9 @@
 *  http://p5js.org/
 */
 
+let preloader;
 let font;
 let g;
-
 let inputGlypher,
 selectParticle,
 rangeFontsize,
@@ -26,12 +24,31 @@ rangeSpread,
 rangeSamplerange;
 
 function preload() {
+  preloader = select("#loading");
+  const domElement = document.getElementById("selectFontfamily");
+  const key =  "AIzaSyATc460rTq2EDcUlkNs1fH4SWnSs1zM8vI";
+  const url = "https://www.googleapis.com/webfonts/v1/webfonts?key=";
+
+  const google_font_api = fetch(url + key)
+  .then(function(response) {
+      return response.json();
+    }).then(function(fonts) {
+      for (let font of fonts.items) {
+        domElement.innerHTML += "<option value=" + font.files.regular +  ">" + font.family + "</option>";
+    }
+  });
+
+
    font = loadFont("assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
    createUserinterface();
 }
 
 function setup() {
-   canvas = createCanvas(window.innerWidth, window.innerHeight);
+  preloader.html("Document ready");
+
+  preloader.remove();
+
+   canvas = createCanvas(window.innerWidth-250, window.innerHeight);
    g = new Glypher();
 }
 
