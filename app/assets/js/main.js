@@ -20,35 +20,30 @@ let rangeFontsize, rangeParticlesize, rangeSamplerate,  rangeSpread, rangeSample
 
 function preload() {
   preloader = select("#loading");
+  let domElement = select("#selectFontfamily");
 
-  const domElement = document.getElementById("selectFontfamily");
-  const key =  "AIzaSyATc460rTq2EDcUlkNs1fH4SWnSs1zM8vI";
-  const url = "https://www.googleapis.com/webfonts/v1/webfonts?key=";
-
-  loadJSON("php/loadFonts.php", function (data) {
+  loadJSON("assets/php/loadFonts.php", function (data) {
+    let opts = "";
     for (let font of data.items) {
-      domElement.innerHTML += "<option value=" + font.files.regular +  ">" + font.family + "</option>";
+      opts += "<option value=" + font.files.regular +  ">" + font.family + "</option>";
     }
-  }, function () {
-    console.log("Error loading fonts");
-  });
+    domElement.html(opts);
+  }, function () { console.log("Error loading fonts"); });
 
   font = loadFont("assets/fonts/Cormorant_Garamond/CormorantGaramond-Bold.ttf");
+
   createUserinterface();
 }
 
 function setup() {
-  preloader.html("Document ready");
-
   preloader.remove();
-
-   canvas = createCanvas(window.innerWidth-250, window.innerHeight);
-   g = new Glypher();
+  canvas = createCanvas(window.innerWidth-250, window.innerHeight);
+  g = new Glypher();
 }
 
 function draw() {
   noLoop();
-    background(255);
-    g.updateValues();
-    g.render();
+  background(255);
+  g.updateValues();
+  g.render();
 }
