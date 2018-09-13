@@ -25,7 +25,7 @@ function preload() {
   const key =  "AIzaSyATc460rTq2EDcUlkNs1fH4SWnSs1zM8vI";
   const url = "https://www.googleapis.com/webfonts/v1/webfonts?key=";
 
-  loadJSON(url+key, "jsonp", function (data) {
+  loadJSON("php/loadFonts.php", function (data) {
     for (let font of data.items) {
       domElement.innerHTML += "<option value=" + font.files.regular +  ">" + font.family + "</option>";
     }
