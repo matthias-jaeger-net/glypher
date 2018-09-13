@@ -5,74 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>glypher - Create artistic graphics with letters and effects</title>
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="bundle.css">
 
 </head>
 <body>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
-  <script type="text/javascript" src="assets/js/main.js"></script>
-  <script type="text/javascript" src="assets/js/glypher.js"></script>
-  <script type="text/javascript" src="assets/js/glypher-userinterface.js"></script>
-
-  <nav>
-    <h4>glypher </h4>
-    <small>A typography experiment in the browser</small>
-    <button type="submit" id="saveJpg">Save a jpg image</button>
-  </nav>
-
-
-  <form>
-    <div>
-      <label>Define your glypher</label>
-      <input id="inputGlypher" type="text" class="form-control" value="A"></input>
-    </div>
-    <div>
-      <label>Set a font size</label>
-      <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1"></input>
-      <label>Set a particle size</label>
-      <input id="rangeParticlesize" type="range" min="1" max="200" value="2" step="1"></input>
-
-    </div>
-    <div>
-      <label>Select the rendering</label>
-      <select id="selectRenderingtype" class="form-control select select-primary select-block mbl">
-        <option value="wireframe">Wireframe</option>
-        <option value="outline">Outline</option>
-        <option value="solid">Solid</option>
-        <option value="gradient">Gradient</option>
+    <div class="mdc-select">
+      <select class="mdc-select__native-control">
+        <option value="grains">
+          Bread, Cereal, Rice, and Pasta
+        </option>
+        <option value="vegetables">
+          Vegetables
+        </option>
+        <option value="fruit">
+          Fruit
+        </option>
       </select>
-    </div>
-    <div>
-      <label>Select the particle type</label>
-      <select id="selectParticle">
-        <option value="point">None</option>
-        <option value="square">Square</option>
-        <option value="portrait">Triangle</option>
-        <option value="landscape">Line</option>
-        <option value="ellipse">Ellipse</option>
-      </select>
+      <label class="mdc-floating-label">Pick a Food Group</label>
+      <div class="mdc-line-ripple"></div>
     </div>
 
-    <div>
-      <label>Select the deformer type</label>
-      <select id="selectDeformertype">
-        <option value="none">No transfrom</option>
-        <option value="random">Random spread</option>
-        <option value="noise">Noise shift</option>
-        <option value="sine">Sine transform</option>
-      </select>
 
+    <div class="mdc-slider" tabindex="0" role="slider"
+         aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+         aria-label="Select Value">
+      <div class="mdc-slider__track-container">
+        <div class="mdc-slider__track"></div>
+      </div>
+      <div class="mdc-slider__thumb-container">
+        <svg class="mdc-slider__thumb" width="21" height="21">
+          <circle cx="10.5" cy="10.5" r="7.875"></circle>
+        </svg>
+        <div class="mdc-slider__focus-ring"></div>
+      </div>
     </div>
 
-    <div>
-      <label>Set a spread range</label>
-      <input id="rangeSpread" type="range" min="1" max="300" value="10" step="2"></input>
-      <label>Set a sample range</label>
-      <input id="rangeSamplerate" type="range" min="0.1" max="0.5" value="0.18" step="0.05"></input>
-    </div>
 
-  </form>
-</body>
-</html>
+
+  <div class="navbar-fixed">
+    <nav>
+      <a href="#" class="brand-logo">glypher</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Save a jpg image</a></li>
+        <li><a href="badges.html">View Code</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <div class="settings">
+
+    <input id="inputGlypher" type="text" class="form-control" value="A"></input>
+    <label>Write something</label>
+
+    <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1"></input>
+    <label>Font size</label>
+
+    <input id="rangeParticlesize" type="range" min="1" max="200" value="50" step="1"></input>
+    <label>Particle size</label>
+
+  <div class="input-field col s12">
+    <select id="selectParticle">
+      <option value="square">Square</option>
+      <option value="portrait">Triangle</option>
+      <option value="ellipse">Ellipse</option>
+    </select>
+    <label>Particle type</label>
+  </div>
+
+    <select id="selectRenderingtype">
+      <option value="" disabled selected>Select a rendering type</option>
+      <option value="wireframe">Wireframe</option>
+      <option value="outline">Outline</option>
+      <option value="solid">Solid</option>
+      <option value="gradient">Gradient</option>
+    </select>
+    <label>Rendering</label>
+
+    <select id="selectDeformertype">
+      <option value="none">No transfrom</option>
+      <option value="random">Random spread</option>
+      <option value="noise">Noise shift</option>
+      <option value="sine">Sine transform</option>
+    </select>
+    <label>Deformer type</label>
+
+
+    <input id="rangeSpread" type="range" min="1" max="300" value="10" step="2"></input>
+    <label>Spread</label>
+
+    <input id="rangeSamplerate" type="range" min="0.1" max="0.5" value="0.18" step="0.05"></input>
+    <label>Sample range</label>
+
+
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+
+      <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+      <script type="text/javascript" src="assets/js/main.js"></script>
+      <script type="text/javascript" src="assets/js/glypher.js"></script>
+      <script type="text/javascript" src="assets/js/glypher-userinterface.js"></script>
+
+
+  </body>
+  </html>

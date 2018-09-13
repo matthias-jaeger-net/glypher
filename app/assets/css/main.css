@@ -4,50 +4,28 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: sans-serif;;
 }
+
 * {
   box-sizing: border-box;
+  outline: 0;
+  font-weight: normal;
 }
+
 canvas {
   vertical-align: middle;
 }
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-
-  padding: 20px;
-}
 
 
-form {
+
+
+.settings {
   position: absolute;
   left: 50px;
   bottom: 50px;
   right: 50px;
-  display: flex;
-  justify-content: space-around;
-
 }
 
-form div {
-  width: 200px;
-}
-
-input, select {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-}
-input[type=range] {
-
-}
-label {
-  font-size: 10px;
+.brand-logo {
+  padding: 10px;
 }

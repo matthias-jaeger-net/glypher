@@ -1,3 +1,5 @@
+
+
 /*
 *  glypher
 *
@@ -12,6 +14,11 @@
 *  Rendering with p5js:
 *  http://p5js.org/
 */
+
+// CommonJS
+//import {MDCSlider} from '@material/slider';
+//const {MDCSlider} = require('@material/slider/dist/mdc.slider');
+
 
 let font;
 let g;
