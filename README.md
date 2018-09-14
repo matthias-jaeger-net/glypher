@@ -23,14 +23,20 @@ Previous screen on Beta 0.0.1
 - [x] Added the idea of different types
 - [x] Refacture to a glypher class
 - [x] Consistent naming for the DOM ids/variables
-- [x] Load all google fonts via the api
+- [x] Load all google fonts via the api (Seems to work)
+- [x] Fix triangle type
 
 # To do
-- [ ] Finish types
+- [ ] Remove confusion from glypher class
+- [ ] Make save buttons work
+- [ ] Make svg export possible
+- [ ] Scaling the radius effect type
+- [ ] Single font cut submenu
 - [ ] Make clickable glyphers
 - [ ] Better user interface
 
 # Future Ideas - Roadmap
+- [ ] Custom background color
 - [ ] Add animation types (fLocking, harmonic motion)
 - [ ] Try how it works in a WebGL 3D context
 

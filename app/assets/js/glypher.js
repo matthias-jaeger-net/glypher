@@ -49,12 +49,11 @@ class Glypher {
   }
 
   renderType() {
-    let points = this.points;
     let noiseValue = 0;
 
-    for (let i = 0; i < points.length; i++) {
-      let x = points[i].x;
-      let y = points[i].y;
+    for (let i = 0; i < this.points.length; i++) {
+      let x = this.points[i].x;
+      let y = this.points[i].y;
 
       if (this.renderingtype == "gradient") {
         noStroke();
@@ -80,11 +79,14 @@ class Glypher {
         rectMode(CENTER);
         rect(x, y, this.radius, this.radius);
       } else if (this.type == "triangle") {
+        push();
+        translate(x, y-this.radius/2);
         beginShape();
-        vertex(x - this.radius * 0.5, y - this.radius);
-        vertex(x, y);
-        vertex(x + this.radius, y + this.radius);
+        vertex(0, 0);
+        vertex(this.radius, this.radius);
+        vertex(0, this.radius);
         endShape(CLOSE);
+        pop();
       }
     }
   }
