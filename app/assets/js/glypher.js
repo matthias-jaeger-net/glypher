@@ -37,11 +37,11 @@ class Glypher {
   }
 
   calcPoints() {
-    let t = this.letter;
-    let x = this.offset.x;
-    let y = this.offset.y;
-    let s = this.fontsize;
-    let options = {
+    const t = this.letter;
+    const x = this.offset.x;
+    const y = this.offset.y;
+    const s = this.fontsize;
+    const options = {
       sampleFactor: this.sample,
       //simplifyThrashold: 0
     };
