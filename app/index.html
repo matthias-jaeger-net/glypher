@@ -5,59 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>glypher - Create artistic graphics with letters and effects</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      html, body, input, select, option {
-        font-family: sans-serif;
-        font-size: 10pt;
-      }
-      canvas {
-        vertical-align: middle;
-        margin-left: 250px;
-      }
-      /*
-        Settings window
-      */
-      .settings {
-        width: 250px;
-        position: fixed;
-        padding: 20px;
-      }
-      .settings input, .settings select {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-      }
-      label {
-        font-size: 8pt;
-        margin-left: 5px;
-      }
-      /*
-        Preloader
-      */
-      .loading {
-        width: 100vw;
-        height: 100vh;
-        background: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 90;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
   </head>
 <body>
   <div id="loading" class="loading">
@@ -71,13 +19,13 @@
       Create complex text effects, based on the vertices of letters.
     </p>
     <label>Write something</label>
-    <input id="inputGlypher" type="text" class="form-control" value="A"></input>
+    <input id="inputGlypher" type="text" class="form-control" value="A" />
     <label>Font size</label>
-    <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1"></input>
+    <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1" />
     <label>Font family</label>
     <select id="selectFontfamily"></select>
     <label>Particle size</label>
-    <input id="rangeParticlesize" type="range" min="1" max="200" value="50" step="1"></input>
+    <input id="rangeParticlesize" type="range" min="1" max="200" value="50" step="1" />
     <label>Particle type</label>
     <select id="selectParticle">
       <option value="square">Square</option>

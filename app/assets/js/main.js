@@ -6,19 +6,20 @@
 *  Rendering with p5js: http://p5js.org/
 */
 
+const SIDEBAR = 250;
+
 let glypher, font, inputGlypher, selectParticle, selectDeformertype,
 rangeFontsize, rangeParticlesize, rangeSamplerate,
 rangeSpread, rangeSamplerange, preloader;
 
 function preload() {
-  preloader = select("#loading");
   callGoogleFontApi();
   createUserinterface();
 }
 
 function setup() {
   preloader.remove();
-  createCanvas(window.innerWidth-250, window.innerHeight);
+  createCanvas(window.innerWidth-SIDEBAR, window.innerHeight);
   glypher = new Glypher();
 }
 

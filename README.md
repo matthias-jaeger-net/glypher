@@ -23,10 +23,12 @@ Previous screen on Beta 0.0.1
 - [x] Added the idea of different types
 - [x] Refacture to a glypher class
 - [x] Consistent naming for the DOM ids/variables
-- [x] Load all google fonts via the api
+- [x] Load all google fonts via the api (Seems to work)
 
 # To do
-- [ ] Finish types
+- [ ] Fix triangle type
+- [ ] Scaling r effect type
+- [ ] Single font cut submenu
 - [ ] Make clickable glyphers
 - [ ] Better user interface
 
