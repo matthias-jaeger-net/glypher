@@ -13,7 +13,8 @@ function callGoogleFontApi() {
         opts += "<option value=" + loc  +  ">" + font.family + "</option>";
       }
       domElement.html(opts);
-      font = loadFont(data.items[0].files.regular);
+
+      font = loadFont(data.items[0].files.regular.slice(5));
     },
     function () {
       console.log("Error loading fonts");
