@@ -7,7 +7,10 @@ function callGoogleFontApi() {
     function (data) {
       let opts = "";
       for (let font of data.items) {
-        opts += "<option value=" + font.files.regular +  ">" + font.family + "</option>";
+        let str = "" + font.files.regular;
+        let loc = str.slice(5);
+        console.log();
+        opts += "<option value=" + loc  +  ">" + font.family + "</option>";
       }
       domElement.html(opts);
       font = loadFont(data.items[0].files.regular);
