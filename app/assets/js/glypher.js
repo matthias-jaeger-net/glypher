@@ -65,53 +65,27 @@ class Glypher {
 
   renderParticles() {
     let i = 0;
+    let n = 0;
+
     for (let p of this.particles) {
+
       if (this.renderingtype == "gradient") {
         noStroke();
         fill(map(i, 0, this.points.length, 20, 255), 0, 100, 10);
       }
+      if (this.deformer == "random") {
+        p.position.x += random(-this.spread, this.spread);
+        p.position.x += random(-this.spread, this.spread);
+      } else if (this.deformer == "noise") {
+        p.position.x += noise(n) * this.spread;
+        n += 0.3;
+      } else if (this.deformer == "sine") {
+        p.position.x += sin(i) * this.spread;
+        p.position.x += sin(i) * this.spread;
+      }
+
       p.render();
       i++;
-    }
-  }
-
-  renderType() {
-    let noiseValue = 0;
-
-    for (let i = 0; i < this.points.length; i++) {
-      let x = this.points[i].x;
-      let y = this.points[i].y;
-
-
-
-      if (this.deformer == "random") {
-        x += random(-this.spread, this.spread);
-        y += random(-this.spread, this.spread);
-      } else if (this.deformer == "noise") {
-        x += noise(noiseValue) * this.spread;
-        noiseValue += 0.3;
-      } else if (this.deformer == "sine") {
-        x += sin(i) * this.spread;
-        y += sin(i) * this.spread;
-      }
-
-      if (this.type == "point") {
-        point(x, y);
-      } else if (this.type == "ellipse") {
-        ellipse(x, y, this.radius, this.radius);
-      } else if (this.type == "square") {
-        rectMode(CENTER);
-        rect(x, y, this.radius, this.radius);
-      } else if (this.type == "triangle") {
-        push();
-        translate(x, y-this.radius/2);
-        beginShape();
-        vertex(0, 0);
-        vertex(this.radius, this.radius);
-        vertex(0, this.radius);
-        endShape(CLOSE);
-        pop();
-      }
     }
   }
 
