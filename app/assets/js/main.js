@@ -8,10 +8,11 @@
 
 const SIDEBAR = 250;
 
-let glypher, font, inputGlypher, selectParticle, selectDeformertype,
+let glypher, font, inputGlypher, selectDeformertype,
 rangeFontsize, rangeParticlesize, rangeSamplerate,
-rangeSpread, rangeSamplerange, rangeBackground, preloader;
+rangeSpread, rangeSamplerange, rangeBackgroundR, rangeBackgroundG, rangeBackgroundB;
 
+let preloader;
 let canvas;
 
 const buttonSave = document.getElementById("buttonSave");
@@ -30,7 +31,7 @@ function setup() {
 
 function draw() {
   noLoop();
-  background(rangeBackground.value());
+  background(rangeBackgroundR.value(), rangeBackgroundG.value(), rangeBackgroundB.value());
   glypher.updateValues();
   glypher.render();
 }

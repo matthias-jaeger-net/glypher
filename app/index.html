@@ -7,18 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>glypher - Create artistic graphics with letters and effects</title>
 
+    <!-- UI Components -->
     <link href="//cdn.muicss.com/mui-0.9.41/css/mui.min.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.muicss.com/mui-0.9.41/js/mui.min.js"></script>
 
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
-
   <body>
-
-  <!-- Preloader -->
-  <div id="loading" class="loading">
-    <div class="loader">glypher</div>
-  </div>
+    <!-- Preloader -->
+    <div id="loading" class="loading">
+      <div class="loader">glypher</div>
+    </div>
 
   <!-- User Interface -->
   <div class="settings">
@@ -28,32 +27,21 @@
     <hr>
     <form class="mui-form">
       <div class="mui-textfield">
-        <input class="mdl-textfield__input" id="inputGlypher" type="text" class="form-control" value="" />
+        <input class="mdl-textfield__input" id="inputGlypher" type="text" class="form-control" value="A" />
         <label class="mdl-textfield__label">Write something</label>
       </div>
 
       <div class="mui-select">
         <select id="selectFontfamily"></select>
-        <label>Font family (All Google Fonts)</label>
+        <label>Pick your font family (Google Fonts)</label>
       </div>
 
       <div class="mui-select">
-        <label>Font size</label>
+        <label>Particle settings</label>
         <input id="rangeFontsize" type="range" min="8" max="1900" value="900" step="1" />
-      </div>
-
-      <div class="mui-select">
-        <label>Particle type</label>
-        <select id="selectParticle">
-          <option value="square">Square</option>
-          <option value="triangle">Triangle</option>
-          <option value="ellipse">Ellipse</option>
-        </select>
-      </div>
-
-      <div class="mui-select">
-        <label>Particle size</label>
-        <input class="mdl-slider mdl-js-slider"  id="rangeParticlesize" type="range" min="1" max="200" value="50" step="1" />
+        <input id="rangeParticlesize" type="range" min="3" max="30" value="3" step="1" />
+        <input id="rangeSpread" type="range" min="1" max="300" value="100" step="2" />
+        <input id="rangeSamplerate" type="range" min="0.002" max="0.5" value="0.1" step="0.05" />
       </div>
 
       <div class="mui-select">
@@ -77,19 +65,10 @@
       </div>
 
     <div class="mui-select">
-      <label>Spread</label>
-      <input class="mdl-slider mdl-js-slider"  id="rangeSpread" type="range" min="1" max="300" value="10" step="2" />
-    </div>
-
-
-    <div class="mui-select">
-      <label>Sample range</label>
-      <input class="mdl-slider mdl-js-slider"  id="rangeSamplerate" type="range" min="0.1" max="0.5" value="0.18" step="0.05" />
-    </div>
-
-    <div class="mui-select">
-      <label>Background</label>
-      <input class="mdl-slider mdl-js-slider"  id="rangeBackground" type="range" min="0" max="255" value="200" step="1" />
+      <label>Background (r, g, b)</label>
+      <input id="rangeBackgroundR" type="range" min="0" max="255" value="200" step="1" />
+      <input id="rangeBackgroundG" type="range" min="0" max="255" value="200" step="1" />
+      <input id="rangeBackgroundB" type="range" min="0" max="255" value="200" step="1" />
     </div>
 
       <button class="mui-btn mui-btn--raised" type="button" id="buttonSave">Save</button>
@@ -105,6 +84,7 @@
   <script type="text/javascript" src="assets/js/glypher.js"></script>
   <script type="text/javascript" src="assets/js/call-google-font-api.js"></script>
   <script type="text/javascript" src="assets/js/glypher-userinterface.js"></script>
+  <script type="text/javascript" src="assets/js/glypher-particle.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>
 
 

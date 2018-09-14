@@ -1,13 +1,13 @@
 class Glypher {
   constructor() {
     this.updateValues();
+    this.particles = [];
   }
 
   updateValues() {
     // Get data from DOM input fields
     this.letter = inputGlypher.value();
     this.fontsize = rangeFontsize.value();
-    this.type = selectParticle.value();
     this.spread = rangeSpread.value();
     this.radius = rangeParticlesize.value();
     this.sample = rangeSamplerate.value();
@@ -16,6 +16,8 @@ class Glypher {
     // Calculate position and size properties
     this.offset = this.centerPosition();
     this.points = this.calcPoints();
+
+    this.particles = this.setParticles();
   }
 
   centerPosition() {
@@ -48,6 +50,31 @@ class Glypher {
     return font.textToPoints(t, x, y, s, options);
   }
 
+  setParticles() {
+    let prts = [];
+
+    for (let i = 0; i < this.points.length; i++) {
+      let coord = {
+        x: this.points[i].x,
+        y: this.points[i].y
+      }
+      prts.push(new Particle(coord, 3, 50));
+    }
+    return prts;
+  }
+
+  renderParticles() {
+    let i = 0;
+    for (let p of this.particles) {
+      if (this.renderingtype == "gradient") {
+        noStroke();
+        fill(map(i, 0, this.points.length, 20, 255), 0, 100, 10);
+      }
+      p.render();
+      i++;
+    }
+  }
+
   renderType() {
     let noiseValue = 0;
 
@@ -55,10 +82,7 @@ class Glypher {
       let x = this.points[i].x;
       let y = this.points[i].y;
 
-      if (this.renderingtype == "gradient") {
-        noStroke();
-        fill(map(i, 0, this.points.length, 20, 255), 50);
-      }
+
 
       if (this.deformer == "random") {
         x += random(-this.spread, this.spread);
@@ -102,6 +126,7 @@ class Glypher {
       noStroke();
       fill(0, 20);
     }
-    this.renderType();
+    //this.renderType();
+    this.renderParticles();
   }
 }
