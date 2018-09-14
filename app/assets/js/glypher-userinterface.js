@@ -4,9 +4,6 @@ const createUserinterface = function() {
   inputGlypher = select("#inputGlypher");
   inputGlypher.input(redraw);
 
-  selectParticle = select("#selectParticle");
-  selectParticle.input(redraw);
-
   rangeFontsize = select("#rangeFontsize");
   rangeFontsize.input(redraw);
 
@@ -35,8 +32,14 @@ const createUserinterface = function() {
     });
   });
 
-  rangeBackground = select("#rangeBackground");
-  rangeBackground.input(redraw);
+  rangeBackgroundR = select("#rangeBackgroundR");
+  rangeBackgroundR.input(redraw);
+
+  rangeBackgroundG = select("#rangeBackgroundG");
+  rangeBackgroundG.input(redraw);
+
+  rangeBackgroundB = select("#rangeBackgroundB");
+  rangeBackgroundB.input(redraw);
 
   buttonSave.addEventListener("click", function () {
     saveCanvas(canvas, "glypher", "jpg");
