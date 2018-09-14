@@ -32,6 +32,14 @@ Previous screen on Beta 0.0.1
 - [ ] Make clickable glyphers
 - [ ] Better user interface
 
+# Future Ideas - Roadmap
+- [ ] Add animation types (fLocking, harmonic motion)
+- [ ] Try how it works in a WebGL 3D context
+
 # Dependencies
-Rendering in the HTML5 canvas http://p5js.org/
-Google Font Api https://developers.google.com/fonts/
+
+Rendering in the HTML5 canvas
+http://p5js.org/
+
+Google Font Api
+https://developers.google.com/fonts/
