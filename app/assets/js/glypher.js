@@ -57,7 +57,7 @@ class Glypher {
 
       if (this.renderingtype == "gradient") {
         noStroke();
-        fill(map(i, 0, this.points.length, 20, 255), 0, map(this.spread, 0, 200, 255, 0));
+        fill(map(i, 0, this.points.length, 20, 255), 50);
       }
 
       if (this.deformer == "random") {
@@ -100,7 +100,7 @@ class Glypher {
       fill(255);
     } else if (this.renderingtype == "solid") {
       noStroke();
-      fill(0);
+      fill(0, 20);
     }
     this.renderType();
   }
