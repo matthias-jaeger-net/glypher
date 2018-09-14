@@ -1,5 +1,5 @@
 /*
-*  glypher is a typography experiments
+*  glypher is a typography experiment
 *
 *  @author Matthias Jäger, Graz 2018
 *  Documentation: https://github.com/matthias-jaeger-net/glypher/
@@ -10,7 +10,12 @@ const SIDEBAR = 250;
 
 let glypher, font, inputGlypher, selectParticle, selectDeformertype,
 rangeFontsize, rangeParticlesize, rangeSamplerate,
-rangeSpread, rangeSamplerange, preloader;
+rangeSpread, rangeSamplerange, rangeBackground, preloader;
+
+let canvas;
+
+const buttonSave = document.getElementById("buttonSave");
+
 
 function preload() {
   callGoogleFontApi();
@@ -18,14 +23,14 @@ function preload() {
 }
 
 function setup() {
-  preloader.remove();
-  createCanvas(window.innerWidth-SIDEBAR, window.innerHeight);
+  canvas = createCanvas(window.innerWidth-SIDEBAR, window.innerHeight);
   glypher = new Glypher();
+  preloader.remove();
 }
 
 function draw() {
   noLoop();
-  background(255);
+  background(rangeBackground.value());
   glypher.updateValues();
   glypher.render();
 }
