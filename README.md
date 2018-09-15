@@ -17,6 +17,8 @@ letters from the google font api directly in the browser. Have fun, it's for fre
 
 ## Examples
 ![glypher example](documentation/results/glypher-1.jpg)
+![glypher example](documentation/results/glypher-2.jpg)
+![glypher example](documentation/results/glypher-3.jpg)
 
 
 
@@ -60,6 +62,6 @@ p5*js - a library for rendering graphics in a `<canvas>`
 The Google Font Api provides a large number of font-families as `<option>` in a `<select>`
 
 # Thanks for beeing here, you are awsome!
-> Let's stay in touch! Pulls, forks and stars are welcome 
+> Let's stay in touch! Pulls, forks and stars are welcome
 
 https://github.com/matthias-jaeger-net/glypher
