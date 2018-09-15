@@ -19,7 +19,10 @@ letters from the google font api directly in the browser. Have fun, it's for fre
 ![glypher example](documentation/results/glypher-1.jpg)
 
 
-# Done
+
+## Development process
+
+## Done
 - [x] Set up documents and get started
 - [x] Duplicte code from PlayfairRandomSpread project
 - [x] Create a very basic user interface
@@ -32,27 +35,28 @@ letters from the google font api directly in the browser. Have fun, it's for fre
 - [x] Added a custom background color
 - [x] Make save button work
 
-# To do
+## To implement
 - [ ] Custom fill color and alpha
 - [ ] Remove confusion from glypher class
 - [ ] Make svg export possible
 - [ ] Scaling the radius effect type
 - [ ] Single font cut submenu
 
-# Future Ideas - Roadmap
+## Future Ideas
 - [ ] Make clickable glyphers
 - [ ] Better user interface
 - [ ] Add animation types (fLocking, harmonic motion)
 - [ ] Try how it works in a WebGL 3D context
 
-# Dependencies
+
+# Development Dependencies
 
 ## Rendering
-p5*js - a library for rendering graphics in a `<canvas>`
 [http://p5js.org/](http://p5js.org/)
-
-
+p5*js - a library for rendering graphics in a `<canvas>`
 
 ## Typography
-The Google Font Api provides a large number of font-families as `<option>` in a `<select>`
 [https://developers.google.com/fonts/](https://developers.google.com/fonts/)
+The Google Font Api provides a large number of font-families as `<option>` in a `<select>`
+
+> Thanks for beeing here, you are awsome. Let's stay in touch on github. Pulls, forks and stars are welcome https://github.com/matthias-jaeger-net/glypher 
