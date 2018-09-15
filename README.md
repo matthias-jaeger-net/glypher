@@ -56,9 +56,3 @@ p5*js - a library for rendering graphics in a `<canvas>`
 ## Typography
 The Google Font Api provides a large number of font-families as `<option>` in a `<select>`
 [https://developers.google.com/fonts/](https://developers.google.com/fonts/)
-
-
-
-## User interface
-The UI Components are rendered with MUI
-https://www.muicss.com/
