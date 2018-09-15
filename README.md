@@ -1,11 +1,12 @@
 # Create generative graphics based on the shape of letters
 
-> Beta 0.0.4 **glypher** is web-based software to bring you artistic effects based on the shape of all available
-letters from the google font api directly in the browser. Have fun, it's for free.
+> Beta 0.0.4 **glypher** is a software to bring you artistic effects based on the shape of all available
+letters of Googles font api directly in the browser. Have fun, it's for free.
 
 ## How it works
 - [x] Type any text
 - [x] Pick a font-family
+- [x] Modify the particles
 - [x] Change colors and strokes
 - [x] Save your work as an image
 
@@ -36,9 +37,9 @@ letters from the google font api directly in the browser. Have fun, it's for fre
 - [x] Changed particle type idea to polygon
 - [x] Added a custom background color
 - [x] Make save button work
+- [x] Custom fill color and alpha
 
 ## To implement
-- [ ] Custom fill color and alpha
 - [ ] Remove confusion from glypher class
 - [ ] Make svg export possible
 - [ ] Scaling the radius effect type
