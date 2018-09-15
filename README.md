@@ -59,4 +59,7 @@ p5*js - a library for rendering graphics in a `<canvas>`
 [https://developers.google.com/fonts/](https://developers.google.com/fonts/)
 The Google Font Api provides a large number of font-families as `<option>` in a `<select>`
 
-> Thanks for beeing here, you are awsome. Let's stay in touch on github. Pulls, forks and stars are welcome https://github.com/matthias-jaeger-net/glypher 
+# Thanks for beeing here, you are awsome!
+> Let's stay in touch! Pulls, forks and stars are welcome 
+
+https://github.com/matthias-jaeger-net/glypher
