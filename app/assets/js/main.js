@@ -1,22 +1,24 @@
 /*
 *  glypher is a typography experiment
 *
-*  @author Matthias Jäger, Graz 2018
+*  Author: Matthias Jäger, Graz 2018
 *  Documentation: https://github.com/matthias-jaeger-net/glypher/
-*  Rendering with p5js: http://p5js.org/
 */
 
 const SIDEBAR = 250;
 
-let glypher, font, inputGlypher, selectDeformertype,
-rangeFontsize, rangeParticlesize, rangeSamplerate,
-rangeSpread, rangeSamplerange, rangeBackgroundR, rangeBackgroundG, rangeBackgroundB;
-
-let preloader;
-let canvas;
+let glypher, font;
+let inputGlypher;
+let rangeFontsize, rangeParticlesize, rangeSamplerate,rangeSpread, rangeSamplerange;
+let rangeBackgroundR, rangeBackgroundG, rangeBackgroundB;
+let rangeFillR, rangeFillG, rangeFillB, rangeFillA;
+let rangeStrokeR, rangeStrokeG, rangeStrokeB, rangeStrokeA, rangeStrokeweight;
+let selectDeformertype, rangeDeformer;
 
 const buttonSave = document.getElementById("buttonSave");
+const preloader = document.getElementById("loading");
 
+let canvas;
 
 function preload() {
   callGoogleFontApi();
@@ -26,12 +28,15 @@ function preload() {
 function setup() {
   canvas = createCanvas(window.innerWidth-SIDEBAR, window.innerHeight);
   glypher = new Glypher();
-  preloader.remove();
+  preloader.style.display = "none";
 }
 
 function draw() {
   noLoop();
   background(rangeBackgroundR.value(), rangeBackgroundG.value(), rangeBackgroundB.value());
+  fill(rangeFillR.value(), rangeFillG.value(), rangeFillB.value(), rangeFillA.value());
+  stroke(rangeStrokeR.value(), rangeStrokeG.value(), rangeStrokeB.value(), rangeStrokeA.value());
+  strokeWeight(rangeStrokeweight.value());
   glypher.updateValues();
   glypher.render();
 }
