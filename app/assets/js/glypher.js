@@ -12,12 +12,14 @@ class Glypher {
     this.radius = rangeParticlesize.value();
     this.sample = rangeSamplerate.value();
     this.deformer = selectDeformertype.value();
-    this.renderingtype = selectRenderingtype.value();
     // Calculate position and size properties
     this.offset = this.centerPosition();
     this.points = this.calcPoints();
 
     this.particles = this.setParticles();
+
+    this.rotation = rangeRotation.value();
+    this.deformation = rangeDeformer.value();
   }
 
   centerPosition() {
@@ -51,56 +53,33 @@ class Glypher {
   }
 
   setParticles() {
-    let prts = [];
-
+    const particleSet = [];
     for (let i = 0; i < this.points.length; i++) {
-      let coord = {
+      const coord = {
         x: this.points[i].x,
         y: this.points[i].y
       }
-      prts.push(new Particle(coord, 3, 50));
+      // Considering a trinagle as default
+      particleSet.push(new Particle(coord, 3, 50, this.rotation));
     }
-    return prts;
-  }
-
-  renderParticles() {
-    let i = 0;
-    let n = 0;
-
-    for (let p of this.particles) {
-
-      if (this.renderingtype == "gradient") {
-        noStroke();
-        fill(map(i, 0, this.points.length, 20, 255), 0, 100, 10);
-      }
-      if (this.deformer == "random") {
-        p.position.x += random(-this.spread, this.spread);
-        p.position.x += random(-this.spread, this.spread);
-      } else if (this.deformer == "noise") {
-        p.position.x += noise(n) * this.spread;
-        n += 0.3;
-      } else if (this.deformer == "sine") {
-        p.position.x += sin(i) * this.spread;
-        p.position.x += sin(i) * this.spread;
-      }
-
-      p.render();
-      i++;
-    }
+    return particleSet;
   }
 
   render() {
-    if (this.renderingtype == "wireframe") {
-      stroke(0);
-      noFill();
-    } else if (this.renderingtype == "outline") {
-      stroke(0);
-      fill(255);
-    } else if (this.renderingtype == "solid") {
-      noStroke();
-      fill(0, 20);
+    let i = 0, n = 0;
+    for (let p of this.particles) {
+      if (this.deformer == "random") {
+        p.position.x += random(-this.deformation, this.deformation);
+        p.position.y += random(-this.deformation, this.deformation);
+      } else if (this.deformer == "noise") {
+        p.position.x += noise(n) * this.deformation;
+        n += 0.3;
+      } else if (this.deformer == "sine") {
+        p.position.x += sin(i) * this.deformation;
+        p.position.x += sin(i) * this.deformation;
+      }
+      p.render();
+      i++;
     }
-    //this.renderType();
-    this.renderParticles();
   }
 }

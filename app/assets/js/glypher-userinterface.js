@@ -1,6 +1,4 @@
 const createUserinterface = function() {
-  preloader = select("#loading");
-
   inputGlypher = select("#inputGlypher");
   inputGlypher.input(redraw);
 
@@ -16,14 +14,14 @@ const createUserinterface = function() {
   selectDeformertype = select("#selectDeformertype");
   selectDeformertype.input(redraw);
 
+  rangeDeformer = select("#rangeDeformer");
+  rangeDeformer.input(redraw);
+
   rangeSpread = select("#rangeSpread");
   rangeSpread.input(redraw);
 
   rangeSamplerate = select("#rangeSamplerate");
   rangeSamplerate.input(redraw);
-
-  selectRenderingtype = select("#selectRenderingtype");
-  selectRenderingtype.input(redraw);
 
   selectFontfamily = select("#selectFontfamily");
   selectFontfamily.input(function() {
@@ -44,4 +42,35 @@ const createUserinterface = function() {
   buttonSave.addEventListener("click", function () {
     saveCanvas(canvas, "glypher", "jpg");
   });
+
+  rangeFillR = select("#rangeFillR");
+  rangeFillR.input(redraw);
+
+  rangeFillG = select("#rangeFillG");
+  rangeFillG.input(redraw);
+
+  rangeFillB = select("#rangeFillB");
+  rangeFillB.input(redraw);
+
+  rangeFillA = select("#rangeFillA");
+  rangeFillA.input(redraw);
+
+
+  rangeStrokeR = select("#rangeStrokeR");
+  rangeStrokeR.input(redraw);
+
+  rangeStrokeG = select("#rangeStrokeG");
+  rangeStrokeG.input(redraw);
+
+  rangeStrokeB = select("#rangeStrokeB");
+  rangeStrokeB.input(redraw);
+
+  rangeStrokeA = select("#rangeStrokeA");
+  rangeStrokeA.input(redraw);
+
+  rangeStrokeweight = select("#rangeStrokeweight");
+  rangeStrokeweight.input(redraw);
+
+  rangeRotation = select("#rangeRotation");
+  rangeRotation.input(redraw);
 }

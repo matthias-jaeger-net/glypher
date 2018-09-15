@@ -1,14 +1,23 @@
-# glypher Beta 0.0.3
+# Create generative graphics based on the shape of letters
 
-glypher is a custom piece of software to bring you
-artistic effects based on the shape of all available
-letters from the google font api directly in the browser.
+> Beta 0.0.4 **glypher** is web-based software to bring you artistic effects based on the shape of all available
+letters from the google font api directly in the browser. Have fun, it's for free.
+
+## How it works
+- [x] Type any text
+- [x] Pick a font-family
+- [x] Change colors and strokes
+- [x] Save your work as an image
 
 ## Running prototye
-[https://matthias-jaeger-net.github.io/glypher/app!](https://matthias-jaeger-net.github.io/glypher/app)
+[https://matthias-jaeger-net.github.io/glypher/app](https://matthias-jaeger-net.github.io/glypher/app)
 
 ## App screen
-![glypher app](documentation/img/screen-3.png)
+![glypher app](documentation/screens/screen-3.png)
+
+## Examples
+![glypher example](documentation/results/glypher-1.jpg)
+
 
 # Done
 - [x] Set up documents and get started
@@ -40,11 +49,15 @@ letters from the google font api directly in the browser.
 
 ## Rendering
 p5*js - a library for rendering graphics in a `<canvas>`
-http://p5js.org/
+[http://p5js.org/](http://p5js.org/)
+
+
 
 ## Typography
 The Google Font Api provides a large number of font-families as `<option>` in a `<select>`
-https://developers.google.com/fonts/
+[https://developers.google.com/fonts/](https://developers.google.com/fonts/)
+
+
 
 ## User interface
 The UI Components are rendered with MUI
