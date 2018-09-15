@@ -1,20 +1,14 @@
-# glypher Beta 0.0.2
+# glypher Beta 0.0.3
 
 glypher is a custom piece of software to bring you
 artistic effects based on the shape of all available
 letters from the google font api directly in the browser.
 
 ## Running prototye
-https://matthias-jaeger-net.github.io/glypher/app
+[https://matthias-jaeger-net.github.io/glypher/app!](https://matthias-jaeger-net.github.io/glypher/app)
 
-
-## App screen during the development
-Current screen
-![glypher app](app/assets/img/screen-2.png)
-
-Previous screen on Beta 0.0.1
-![glypher app](app/assets/img/screen.png)
-
+## App screen
+![glypher app](documentation/img/screen-3.png)
 
 # Done
 - [x] Set up documents and get started
@@ -25,25 +19,33 @@ Previous screen on Beta 0.0.1
 - [x] Consistent naming for the DOM ids/variables
 - [x] Load all google fonts via the api (Seems to work)
 - [x] Fix triangle type
+- [x] Changed particle type idea to polygon
+- [x] Added a custom background color
+- [x] Make save button work
 
 # To do
+- [ ] Custom fill color and alpha
 - [ ] Remove confusion from glypher class
-- [ ] Make save buttons work
 - [ ] Make svg export possible
 - [ ] Scaling the radius effect type
 - [ ] Single font cut submenu
-- [ ] Make clickable glyphers
-- [ ] Better user interface
 
 # Future Ideas - Roadmap
-- [ ] Custom background color
+- [ ] Make clickable glyphers
+- [ ] Better user interface
 - [ ] Add animation types (fLocking, harmonic motion)
 - [ ] Try how it works in a WebGL 3D context
 
 # Dependencies
 
-Rendering in the HTML5 canvas
+## Rendering
+p5*js - a library for rendering graphics in a `<canvas>`
 http://p5js.org/
 
-Google Font Api
+## Typography
+The Google Font Api provides a large number of font-families as `<option>` in a `<select>`
 https://developers.google.com/fonts/
+
+## User interface
+The UI Components are rendered with MUI
+https://www.muicss.com/
