@@ -1,6 +1,6 @@
 # Create generative graphics based on the shape of letters
 
-> Beta 0.0.4 **glypher** is a software to bring you artistic effects based on the shape of all available
+> Beta 0.0.5 **glypher** is a software to bring you artistic effects based on the shape of all available
 letters of Googles font api directly in the browser. Have fun, it's for free.
 
 ## How it works
